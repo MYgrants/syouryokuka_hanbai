@@ -315,6 +315,35 @@
   /* ---------- Hero backdrop ---------- */
   .hero{position:relative;overflow:hidden;}
   .hero > *{position:relative;z-index:1;}
+  .hero-aurora{
+    position:absolute;inset:-15% -10%;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(38% 38% at 28% 22%, rgba(0,113,227,0.11), transparent 62%),
+      radial-gradient(32% 32% at 76% 18%, rgba(0,113,227,0.08), transparent 65%),
+      radial-gradient(46% 40% at 52% 92%, rgba(29,29,31,0.05), transparent 70%);
+    filter:blur(42px);
+    animation:auroraDrift 24s ease-in-out infinite alternate;
+    will-change:transform;
+  }
+  @keyframes auroraDrift{
+    0%{transform:translate3d(0,0,0) scale(1);}
+    50%{transform:translate3d(-2.5%,2%,0) scale(1.06);}
+    100%{transform:translate3d(2.5%,-2%,0) scale(1);}
+  }
+  #heroTitle.shine{
+    background:linear-gradient(100deg, var(--text) 38%, #b7b7bc 50%, var(--text) 62%);
+    background-size:260% 100%;
+    background-position:150% 0;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:heroShine 2.2s ease-out .3s 1;
+  }
+  @keyframes heroShine{
+    to{background-position:-40% 0;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-aurora{animation:none;}
+    #heroTitle.shine{animation:none;background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--text);}
+  }
 
   /* ---------- Tool / preview cards ---------- */
   .tool-card{
@@ -501,9 +530,10 @@
 
 <!-- ===================== HOME ===================== -->
 <section data-view="home" class="active">
-  <div class="hero wrap">
+  <div class="hero wrap" id="heroSection">
+    <div class="hero-aurora" aria-hidden="true"></div>
     <span class="eyebrow">省力化投資補助金</span>
-    <h1>販売事業者<br>サポートガイド</h1>
+    <h1 id="heroTitle">販売事業者<br>サポートガイド</h1>
     <p class="lead">MY補助金パートナーが、省力化投資補助金の申請サポートを行うにあたり、販売事業者様に事前にご確認いただきたい事項をご案内しています。</p>
     <div class="btn-row">
       <a href="#" class="pill-btn" data-nav="flow">送客までの流れを見る</a>
@@ -1781,6 +1811,19 @@
   // ---------- Initial view from hash ----------
   var initial = (location.hash || '').replace('#', '');
   showView(initial || 'home');
+
+  // ---------- Hero shine ----------
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroTitle = document.getElementById('heroTitle');
+
+  if(heroTitle && !reduceMotion){
+    requestAnimationFrame(function(){
+      heroTitle.classList.add('shine');
+    });
+    heroTitle.addEventListener('animationend', function(){
+      heroTitle.classList.remove('shine');
+    });
+  }
 })();
 </script>
 
