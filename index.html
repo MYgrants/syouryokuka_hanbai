@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>販売事業者サポートガイド｜MY補助金パートナー</title>
+<meta name="description" content="MY補助金パートナーが提供する、省力化投資補助金の販売事業者様向けサポートガイドです。送客前にご確認いただきたい事項をご案内しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff;
+    --soft:#F5F5F7;
+    --card:#FBFBFD;
+    --text:#1D1D1F;
+    --sub:#6E6E73;
+    --blue:#0071E3;
+    --blue-dark:#0058B0;
+    --border:#D2D2D7;
+    --border-light:#E8E8ED;
+    --green:#1E8E3E;
+    --green-bg:#E9F7EF;
+    --orange:#B26A00;
+    --orange-bg:#FFF4E5;
+    --radius-card:22px;
+    --radius-pill:980px;
+    --shadow:0 2px 10px rgba(0,0,0,0.06);
+    --shadow-md:0 8px 30px rgba(0,0,0,0.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--text);
+    font-family:'Noto Sans JP','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.75;
+  }
+  img{max-width:100%;display:block;border-radius:16px;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Inter','Noto Sans JP',sans-serif;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0 0 .5em;
+    color:var(--text);
+  }
+  p{margin:0 0 1em;color:var(--text);}
+  ul{margin:0 0 1em;padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+  /* ---------- Layout helpers ---------- */
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+  .section{padding:90px 0;}
+  .section.soft{background:var(--soft);}
+  .eyebrow{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:.12em;
+    color:var(--sub);
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .section h2{font-size:34px;letter-spacing:-0.02em;margin-bottom:16px;}
+  .section .lead{color:var(--sub);font-size:17px;max-width:640px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border-light);
+    border-radius:var(--radius-card);
+    padding:32px;
+    box-shadow:none;
+  }
+  .grid{display:grid;gap:20px;}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr);}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  @media(max-width:760px){
+    .grid.cols-2, .grid.cols-3{grid-template-columns:1fr;}
+    .section{padding:64px 0;}
+  }
+  .pill-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--blue);
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    padding:12px 26px;
+    border-radius:var(--radius-pill);
+    border:none;
+    cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .pill-btn:hover{background:var(--blue-dark);}
+  .pill-btn.ghost{
+    background:transparent;
+    color:var(--blue);
+    border:1px solid var(--border);
+  }
+  .pill-btn.ghost:hover{background:rgba(0,113,227,0.06);}
+  .pill-btn.small{padding:8px 18px;font-size:13px;}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+  .divider{height:1px;background:var(--border-light);border:none;margin:32px 0;}
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--border-light);
+  }
+  .header-inner{
+    max-width:1080px;margin:0 auto;padding:0 20px;
+    height:52px;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;
+  }
+  .header-left{display:flex;align-items:center;gap:14px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;cursor:pointer;}
+  .brand-sub{color:var(--sub);font-weight:500;display:none;}
+  @media(min-width:640px){.brand-sub{display:inline;}}
+
+  nav.desktop-nav{display:none;gap:22px;font-size:13px;font-weight:500;color:var(--text);}
+  @media(min-width:980px){nav.desktop-nav{display:flex;}}
+  nav.desktop-nav a{color:var(--sub);padding:6px 2px;border-bottom:2px solid transparent;transition:color .15s;}
+  nav.desktop-nav a:hover, nav.desktop-nav a.active{color:var(--text);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .hamburger{
+    width:36px;height:36px;border-radius:10px;border:1px solid var(--border-light);
+    background:var(--card);display:flex;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--text);padding:0;flex:0 0 auto;
+  }
+
+  /* ---------- Drawer ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .overlay.open{opacity:1;pointer-events:auto;}
+  .drawer{
+    position:fixed;top:0;left:0;bottom:0;width:300px;max-width:84vw;
+    background:#fff;z-index:200;
+    transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+    box-shadow:var(--shadow-md);
+    display:flex;flex-direction:column;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border-light);}
+  .drawer-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--border-light);background:var(--card);cursor:pointer;font-size:16px;}
+  .drawer-nav{padding:12px 10px;overflow-y:auto;}
+  .drawer-nav a{
+    display:block;padding:12px 14px;border-radius:12px;font-size:15px;font-weight:500;color:var(--text);
+  }
+  .drawer-nav a.sub{font-size:13.5px;color:var(--sub);padding-left:28px;}
+  .drawer-nav a:hover, .drawer-nav a.active{background:var(--soft);color:var(--blue);}
+  .drawer-links{padding:14px 20px;border-top:1px solid var(--border-light);}
+  .drawer-links a{display:block;font-size:13px;color:var(--sub);padding:6px 0;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:160px 0 100px;text-align:center;}
+  .hero .eyebrow{}
+  .hero h1{
+    font-size:56px;line-height:1.1;letter-spacing:-0.03em;max-width:760px;margin:0 auto 22px;font-weight:800;
+  }
+  .hero p.lead{max-width:560px;margin:0 auto 38px;font-size:19px;color:var(--sub);line-height:1.7;}
+  .hero .btn-row{justify-content:center;}
+  @media(max-width:640px){.hero h1{font-size:36px;}}
+
+  .quicknav-grid{margin-top:26px;}
+  .quicknav-card{
+    background:var(--card);border:1px solid var(--border-light);border-radius:18px;
+    padding:26px;text-align:left;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .quicknav-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border);}
+  .quicknav-card .qn-num{font-family:'Inter',sans-serif;font-weight:700;color:var(--sub);font-size:12px;letter-spacing:.06em;}
+  .quicknav-card .qn-title{font-weight:700;font-size:17px;}
+  .quicknav-card .qn-desc{font-size:13.5px;color:var(--sub);line-height:1.65;}
+  .quicknav-card .qn-arrow{margin-top:10px;color:var(--text);font-size:13px;font-weight:600;transition:color .2s ease;}
+  .quicknav-card:hover .qn-arrow{color:var(--blue);}
+
+  /* ---------- Roadmap timeline ---------- */
+  .roadmap-scroll-hint{display:none;text-align:center;font-size:12px;color:var(--sub);margin-bottom:14px;}
+  @media(max-width:760px){.roadmap-scroll-hint{display:block;}}
+  .roadmap{
+    display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding:10px 4px 20px;
+    scroll-snap-type:x proximity;
+  }
+  .roadmap-node{
+    flex:0 0 260px;scroll-snap-align:start;padding:0 16px;position:relative;
+  }
+  .roadmap-node .node-circle{
+    width:40px;height:40px;border-radius:50%;background:var(--text);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Inter',sans-serif;
+    font-size:16px;margin-bottom:18px;
+  }
+  .roadmap-node .node-arrow{
+    position:absolute;top:18px;right:-8px;color:var(--border);font-size:20px;
+  }
+  .roadmap-node:last-child .node-arrow{display:none;}
+  .roadmap-node h3{font-size:17px;margin-bottom:8px;}
+  .roadmap-node p{font-size:14px;color:var(--sub);margin-bottom:14px;}
+  .roadmap-node img{margin-bottom:14px;border:1px solid var(--border-light);}
+
+  /* ---------- Checklist / progress ring ---------- */
+  .progress-panel{
+    display:flex;align-items:center;gap:20px;background:var(--card);
+    border:1px solid var(--border-light);border-radius:var(--radius-card);
+    padding:22px 26px;margin-bottom:36px;position:sticky;top:64px;z-index:5;
+  }
+  .progress-ring-wrap{position:relative;width:64px;height:64px;flex:0 0 auto;}
+  .progress-ring-wrap svg{transform:rotate(-90deg);}
+  .progress-ring-track{fill:none;stroke:var(--border-light);stroke-width:6;}
+  .progress-ring-bar{fill:none;stroke:var(--blue);stroke-width:6;stroke-linecap:round;transition:stroke-dasharray .3s ease;}
+  .progress-ring-text{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:13px;
+  }
+  .progress-copy .p-title{font-weight:700;font-size:15px;margin-bottom:2px;}
+  .progress-copy .p-sub{font-size:13px;color:var(--sub);}
+
+  .checklist-group{margin-bottom:22px;}
+  .checklist-group h3{font-size:17px;margin-bottom:12px;}
+  .check-item{
+    display:flex;gap:12px;align-items:flex-start;background:var(--card);
+    border:1px solid var(--border-light);border-radius:16px;padding:16px 18px;margin-bottom:10px;
+  }
+  .check-item input[type="checkbox"]{
+    width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:var(--blue);cursor:pointer;
+  }
+  .check-item label{font-size:15px;font-weight:500;cursor:pointer;flex:1;}
+  .check-item .item-note{display:block;font-size:13px;color:var(--sub);font-weight:400;margin-top:4px;}
+  .check-item .item-link{display:inline-block;margin-top:6px;font-size:13.5px;color:var(--blue);font-weight:600;}
+  .warn-box{
+    background:var(--card);border:1px solid var(--border-light);border-left:3px solid var(--orange);
+    border-radius:12px;padding:18px 20px;
+    font-size:13.5px;color:var(--text);margin-top:10px;
+  }
+  .warn-box strong{display:block;margin-bottom:6px;font-size:13.5px;color:var(--orange);}
+  .warn-box ul{margin:8px 0 0;padding-left:1.2em;color:var(--sub);}
+  .banner-caution{
+    background:var(--card);border:1px solid var(--border-light);border-left:3px solid var(--orange);
+    color:var(--text);
+    border-radius:12px;padding:16px 20px;font-weight:500;font-size:14.5px;margin-bottom:30px;
+  }
+
+  /* ---------- Numbered content cards (みなし大企業 etc.) ---------- */
+  .num-card{
+    background:var(--card);border:1px solid var(--border-light);border-radius:var(--radius-card);
+    padding:28px 30px;margin-bottom:14px;display:flex;gap:22px;align-items:flex-start;
+  }
+  .num-card .num-badge{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:transparent;
+    border:1.5px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;
+    font-weight:700;color:var(--text);font-size:14px;
+  }
+  .num-card .num-body{flex:1;}
+  .num-card h3{font-size:16.5px;margin-bottom:6px;}
+  .num-card p{font-size:14.5px;color:var(--sub);margin-bottom:10px;}
+  .num-card img{margin-top:6px;border:1px solid var(--border-light);}
+
+  /* ---------- Cost tables ---------- */
+  .cost-card{
+    background:var(--card);border:1px solid var(--border-light);border-radius:18px;
+    padding:22px 24px;margin-bottom:14px;
+  }
+  .cost-card h4{font-size:15.5px;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .cap-tag{
+    display:inline-block;font-size:11.5px;font-weight:600;
+    color:var(--sub);
+  }
+  .cap-tag.up{color:var(--green);}
+  .cap-tag.warn{color:var(--orange);}
+  .must-card{
+    border:1px solid var(--border);background:var(--card);border-radius:20px;padding:28px 30px;margin-bottom:24px;
+    border-top:3px solid var(--blue);
+  }
+  .must-card h4{color:var(--text);font-size:16px;margin-bottom:10px;}
+
+  .exclude-list h4{font-size:15px;margin:22px 0 8px;color:var(--text);}
+  .exclude-list ul{font-size:14px;color:var(--sub);}
+
+  /* ---------- Section footer nav ---------- */
+  .section-nav{display:flex;justify-content:space-between;align-items:center;margin-top:44px;flex-wrap:wrap;gap:14px;}
+
+  /* ---------- Views ---------- */
+  main{padding-top:52px;}
+  [data-view]{display:none;}
+  [data-view].active{display:block;animation:viewIn .5s cubic-bezier(.22,1,.36,1);}
+  @keyframes viewIn{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    [data-view].active{animation:none;}
+  }
+
+  /* ---------- Hero backdrop ---------- */
+  .hero{position:relative;overflow:hidden;}
+  .hero > *{position:relative;z-index:1;}
+
+  /* ---------- Tool / preview cards ---------- */
+  .tool-card{
+    background:var(--card);border:1px solid var(--border-light);border-radius:26px;
+    padding:36px;display:flex;gap:28px;align-items:flex-start;
+  }
+  @media(max-width:700px){.tool-card{flex-direction:column;}}
+  .tool-icon{
+    flex:0 0 auto;width:56px;height:56px;border-radius:16px;background:var(--blue);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;font-weight:800;
+    font-family:'Inter',sans-serif;
+  }
+  .tool-icon.alt{background:var(--text);}
+  .tool-body h3{font-size:20px;margin-bottom:8px;}
+  .tool-body p{font-size:15px;color:var(--sub);}
+
+  .browser-mock{
+    border-radius:16px;overflow:hidden;border:1px solid var(--border-light);
+    box-shadow:var(--shadow-md);background:#fff;
+  }
+  .browser-mock .bm-bar{
+    display:flex;align-items:center;gap:14px;padding:10px 14px;background:var(--soft);
+    border-bottom:1px solid var(--border-light);
+  }
+  .browser-mock .bm-dots{display:flex;gap:6px;flex:0 0 auto;}
+  .browser-mock .bm-dots span{width:10px;height:10px;border-radius:50%;display:block;}
+  .browser-mock .bm-dots span:nth-child(1){background:#FF5F57;}
+  .browser-mock .bm-dots span:nth-child(2){background:#FEBC2E;}
+  .browser-mock .bm-dots span:nth-child(3){background:#28C840;}
+  .browser-mock .bm-url{
+    flex:1;background:#fff;border:1px solid var(--border-light);border-radius:8px;
+    padding:5px 12px;font-size:12px;color:var(--sub);font-family:'Inter',sans-serif;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .browser-mock iframe{width:100%;height:520px;border:none;display:block;}
+  @media(max-width:700px){.browser-mock iframe{height:400px;}}
+
+  /* ---------- Footer ---------- */
+  footer.site-footer{
+    padding:56px 0 40px;text-align:center;border-top:1px solid var(--border-light);background:var(--soft);
+  }
+  footer .brand{justify-content:center;margin-bottom:14px;}
+  footer p{color:var(--sub);font-size:13px;margin-bottom:18px;}
+
+  .subtitle-block{margin-bottom:40px;}
+  .note-line{font-size:13.5px;color:var(--sub);}
+
+  ::selection{background:rgba(0,113,227,0.18);}
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:3px solid rgba(0,113,227,.5);outline-offset:2px;border-radius:6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1" y1="4" x2="17" y2="4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="1" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="1" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="brand" data-nav="home" role="button" tabindex="0">
+        <span>MY補助金パートナー<span class="brand-sub">　販売事業者サポートガイド</span></span>
+      </div>
+    </div>
+    <nav class="desktop-nav">
+      <a href="#" data-nav="home">ホーム</a>
+      <a href="#" data-nav="flow">送客までの流れ</a>
+      <a href="#" data-nav="checklist">確認項目</a>
+      <a href="#" data-nav="system">申請システムについて</a>
+      <a href="#" data-nav="eligibility-tool">申請可否判断ツール</a>
+      <a href="#" data-nav="schedule">申請スケジュール</a>
+    </nav>
+    <div class="header-actions">
+      <a class="pill-btn small" href="https://s57i7.share.hsforms.com/25J7BV51XQ9u9396ytOD8ig" target="_blank" rel="noopener">送客フォームへ</a>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <strong>メニュー</strong>
+    <button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#" data-nav="home">ホーム</a>
+    <a href="#" data-nav="flow">送客までの流れ</a>
+    <a href="#" data-nav="checklist">確認項目</a>
+    <a href="#" data-nav="system">申請システムについて</a>
+    <a href="#" data-nav="system-costs" class="sub">└ 補助対象経費について</a>
+    <a href="#" data-nav="deemed-large">みなし大企業</a>
+    <a href="#" data-nav="deemed-same">みなし同一法人</a>
+    <a href="#" data-nav="basic-requirements">基本要件</a>
+    <a href="#" data-nav="application-criteria">申請基準</a>
+    <a href="#" data-nav="schedule">申請スケジュール</a>
+    <a href="#" data-nav="eligibility-tool">申請可否判断ツール</a>
+    <a href="#" data-nav="recipient-site">補助事業者様向けサイトについて</a>
+  </nav>
+  <div class="drawer-links">
+    <a href="https://shoryokuka.smrj.go.jp/ippan/about/" target="_blank" rel="noopener">省力化投資補助金 公式HP ↗</a>
+    <a href="https://s57i7.share.hsforms.com/25J7BV51XQ9u9396ytOD8ig" target="_blank" rel="noopener">送客フォーム ↗</a>
+  </div>
+</aside>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<section data-view="home" class="active">
+  <div class="hero wrap">
+    <span class="eyebrow">省力化投資補助金</span>
+    <h1>販売事業者<br>サポートガイド</h1>
+    <p class="lead">MY補助金パートナーが、省力化投資補助金の申請サポートを行うにあたり、販売事業者様に事前にご確認いただきたい事項をご案内しています。</p>
+    <div class="btn-row">
+      <a href="#" class="pill-btn" data-nav="flow">送客までの流れを見る</a>
+      <a class="pill-btn ghost" href="https://shoryokuka.smrj.go.jp/ippan/about/" target="_blank" rel="noopener">省力化投資補助金公式HP ↗</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">GUIDE CONTENTS</span>
+        <h2>サイト内のご案内</h2>
+        <p class="lead">送客前に確認いただきたい項目を、ページごとにまとめています。上から順にご確認ください。</p>
+      </div>
+      <div class="grid cols-2 quicknav-grid">
+        <button class="quicknav-card" data-nav="flow">
+          <span class="qn-num">01</span>
+          <span class="qn-title">送客までの流れ</span>
+          <span class="qn-desc">確認事項の説明・システムの説明・送客フォーム入力までの3ステップをご案内します。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="checklist">
+          <span class="qn-num">02</span>
+          <span class="qn-title">確認項目</span>
+          <span class="qn-desc">送客前に必ずご確認いただきたい要件・注意事項の一覧です。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="system">
+          <span class="qn-num">03</span>
+          <span class="qn-title">申請システムについて</span>
+          <span class="qn-desc">申請にあたりお客様へご説明・ご準備いただく資料項目です。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="deemed-large">
+          <span class="qn-num">04</span>
+          <span class="qn-title">みなし大企業</span>
+          <span class="qn-desc">みなし大企業に該当する条件を確認します。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="deemed-same">
+          <span class="qn-num">05</span>
+          <span class="qn-title">みなし同一法人</span>
+          <span class="qn-desc">みなし同一法人に該当する条件を確認します。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="basic-requirements">
+          <span class="qn-num">06</span>
+          <span class="qn-title">基本要件</span>
+          <span class="qn-desc">公募回ごとに定められる基本要件の考え方をご説明します。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="application-criteria">
+          <span class="qn-num">07</span>
+          <span class="qn-title">申請基準</span>
+          <span class="qn-desc">弊社が定める申請基準4項目をご確認ください。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="schedule">
+          <span class="qn-num">08</span>
+          <span class="qn-title">申請スケジュール</span>
+          <span class="qn-desc">申請から着金・報告までのおおまかな流れをご案内します。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="eligibility-tool">
+          <span class="qn-num">09</span>
+          <span class="qn-title">申請可否判断ツール</span>
+          <span class="qn-desc">補助事業者様の情報を入力し、申請対象になるかを簡易的に確認できます。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+        <button class="quicknav-card" data-nav="recipient-site">
+          <span class="qn-num">10</span>
+          <span class="qn-title">補助事業者様向けサイト</span>
+          <span class="qn-desc">補助事業者様にご案内しているサイトの内容をご確認いただけます。</span>
+          <span class="qn-arrow">見る →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 送客までの流れ ===================== -->
+<section data-view="flow">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">STEP 01</span>
+        <h2>送客までの流れ</h2>
+        <p class="lead">送客にあたっては、以下の3つのステップでお進めください。</p>
+      </div>
+
+      <div class="roadmap-scroll-hint">← 横にスクロールできます →</div>
+      <div class="roadmap">
+        <div class="roadmap-node">
+          <div class="node-circle">1</div>
+          <div class="node-arrow">→</div>
+          <h3>補助事業者へ確認事項を説明する</h3>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXy_nIJQWzi1YjWXHsGMylp7oPJbupWV8JCQtt_IMeywxPKGpVTTCgGgaXbA4OMMN9esPseqD_kXUy-AgtINP5F2PYo5BeVv3SNqfKJ_Din_gw0VS4PjRbRD8KSC1QIh_D529-8iPiWriDpUMDtZqG_puEdq9qgFAB5RZ5Syp7-JgYLjxTGEhMUfNtc=w1280" alt="補助事業者へ確認事項を説明するイメージ">
+          <p>送客基準を満たしているかについて、送客にあたっての確認事項や申請時の注意点をご説明いただきます。ご確認いただく内容は「確認項目」ページにてご案内しております。</p>
+          <a href="#" data-nav="checklist" class="pill-btn ghost small">確認項目はこちら</a>
+        </div>
+        <div class="roadmap-node">
+          <div class="node-circle">2</div>
+          <div class="node-arrow">→</div>
+          <h3>申請するシステムについて説明する</h3>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWjJql2VQjEUpYq8aBLsFlqU_erg8PsI7pv6xBa27o0L1D86a_-jBCAQenjLBRai-Yr9wUmNAgGSpFi5C2pUU0FhY23Jw-nDXJ2r4IrxoSiKla4ABo9XhaNOfUpGt7BnRH1DM9UrS2m6tQsJ6JpF89wbIZR6MAYPoK3JaBH2APe1fkOJFDmZaxocKw4olXl62hIFp_PFqFesLDTDSxe639HDo2IRrDrnEyKI_UY_yg=w1280" alt="申請するシステムについて説明するイメージ">
+          <p>導入システムについて詳細に説明いただいたうえで、ヒヤリングを行っていただきます。</p>
+          <a href="#" data-nav="system" class="pill-btn ghost small">申請システムについて</a>
+        </div>
+        <div class="roadmap-node">
+          <div class="node-circle">3</div>
+          <h3>送客フォーム入力を行う</h3>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQU9UOfkBB8T2TztrFggC4XcpjXWPZA3GCFvGNQK9AHKppr6uU7iRkLZwHnTwXVts5zqYZyVmER_JI6h8hAXvFeZZFj-TbVJEqf6PbMt7itHH1HLSK5pljlykHAp15WPGSxf1J4LE0AEKzRWzljml3TzhCjjCQ_BZbPMgYHdqXSmnlUZR7gHMMmMqxSi=w1280" alt="送客フォーム入力を行うイメージ">
+          <p>①②の説明が完了いたしましたら、下記ボタンをクリックいただき送客フォームの入力をお願いいたします。</p>
+          <p class="note-line">※必ず「システムについて」「確認項目について」の2点をお客様にご説明いただいたうえでフォームのご入力をお願いいたします。</p>
+          <a class="pill-btn small" href="https://s57i7.share.hsforms.com/25J7BV51XQ9u9396ytOD8ig" target="_blank" rel="noopener">送客フォーム ↗</a>
+        </div>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="home">← ホームへ戻る</a>
+        <a href="#" class="pill-btn" data-nav="checklist">確認項目を見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 確認項目 ===================== -->
+<section data-view="checklist">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">STEP 02</span>
+        <h2>確認項目</h2>
+        <p class="lead">送客前に、以下の内容を必ずご確認ください。</p>
+      </div>
+      <div class="banner-caution">※不正に関する注意喚起までの、全ての項目を必ずご確認ください。</div>
+
+      <div class="progress-panel">
+        <div class="progress-ring-wrap">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="progress-ring-track" cx="32" cy="32" r="27"></circle>
+            <circle class="progress-ring-bar" id="checklistRingBar" cx="32" cy="32" r="27" stroke-dasharray="0 170"></circle>
+          </svg>
+          <div class="progress-ring-text" id="checklistRingText">0%</div>
+        </div>
+        <div class="progress-copy">
+          <div class="p-title">確認の進捗</div>
+          <div class="p-sub"><span id="checklistCountText">0 / 0</span> 件 確認済み（この端末に保存されます）</div>
+        </div>
+      </div>
+
+      <div id="checklistItems">
+
+        <div class="checklist-group">
+          <h3>基本要件・体制の確認</h3>
+
+          <div class="check-item">
+            <input type="checkbox" id="c1" data-group="checklist">
+            <label for="c1">前期及び今期（申請時点）において、常勤従業員は1名以上在籍していますか？
+              <span class="item-note">申請時に従業員が0名の場合、対象となる給与がないため申請できません。また、従業員が在籍していても、基準年度および各事業年度で対象従業員が0名の場合は申請不可となります。</span>
+            </label>
+          </div>
+          <div class="warn-box">
+            <strong>⚠️ 常勤従業員の定義について</strong>
+            「常勤従業員」とは、中小企業基本法で定める「常時使用する従業員」を指し、労働基準法第20条に基づき、解雇の際に事前の予告が必要となる方が該当します。以下の方は、常勤従業員には含まれません。
+            <ul>
+              <li>日々雇い入れられる方</li>
+              <li>雇用期間が2か月以内と定められている方</li>
+              <li>季節的業務で、4か月以内の期間を定めて雇用されている方</li>
+              <li>試用期間中の方</li>
+              <li>代表取締役、専従者など従業員に該当しない方</li>
+            </ul>
+            ※上記に該当する方を常勤従業員として申告した場合、採択の取消などの対象となる可能性がありますのでご注意ください。
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="c2" data-group="checklist">
+            <label for="c2">みなし同一法人に該当しませんか？
+              <a href="#" data-nav="deemed-same" class="item-link">みなし同一法人とは？ →</a>
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="c3" data-group="checklist">
+            <label for="c3">みなし大企業に該当しませんか？
+              <a href="#" data-nav="deemed-large" class="item-link">みなし大企業とは？ →</a>
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="c4" data-group="checklist">
+            <label for="c4">基本要件について、お客様へ説明のうえご了承いただきましたか？
+              <a href="#" data-nav="basic-requirements" class="item-link">基本要件とは？ →</a>
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="c5" data-group="checklist">
+            <label for="c5">弊社が定める申請基準を満たしていますか？
+              <a href="#" data-nav="application-criteria" class="item-link">申請基準について →</a>
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="c6" data-group="checklist">
+            <label for="c6">申請のおおまかなスケジュールについて、お客様へご説明のうえ把握されていますか？
+              <a href="#" data-nav="schedule" class="item-link">申請スケジュールについて →</a>
+            </label>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <h3>注意事項</h3>
+          <div class="check-item">
+            <input type="checkbox" id="c7" data-group="checklist">
+            <label for="c7">＜交付決定前の発注・契約・支払に関する注意＞
+              <span class="item-note">本補助金では、原則として交付決定前に行われた発注・契約・支払は補助対象となりません。必ず交付決定後に行うようにお願いいたします。</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c8" data-group="checklist">
+            <label for="c8">＜申請内容についての注意＞
+              <span class="item-note">本申請は、新たに導入するシステムを対象とするものであり、既存システムの名義変更等は認められていません。</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c9" data-group="checklist">
+            <label for="c9">＜補助対象期間外の費用混在に関する注意＞
+              <span class="item-note">事業実施期間外の利用料や費用を、補助対象経費として含めることは認められていません。</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <h3>対象事業者・見積もりの確認</h3>
+          <div class="check-item">
+            <input type="checkbox" id="c10" data-group="checklist">
+            <label for="c10">医療法人（医療・介護系の会社）に該当しませんか？
+              <span class="item-note">公的医療保険・介護保険からの診療報酬・介護報酬、固定価格買取制度等との重複がある事業は補助対象となりません。</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c11" data-group="checklist">
+            <label for="c11">相見積もりを取る必要があります。相見積もり先は選定されていますか？
+              <span class="item-note">候補者決定後、相見積書を提出する必要がありますので、現時点で選定されていない場合、候補者決定までに選定するようお願いいたします。（申請フェーズ：送客→応募申請→候補者決定）</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c12" data-group="checklist">
+            <label for="c12">他の助成制度の利用実績を確認しましたか？
+              <span class="item-note">以下に該当する事業者は、補助対象外となります。ご送客前に必ずご確認ください。</span>
+              <ul style="margin-top:8px;font-size:13px;color:var(--sub);">
+                <li>補助対象経費が重複している</li>
+                <li>公的医療保険・介護保険からの診療報酬・介護報酬、固定価格買取制度等との重複がある</li>
+                <li>過去に「ものづくり・商業・サービス生産性向上促進補助金」、「中小企業等事業再構築促進補助金」又は「中小企業新事業進出補助金」の交付決定を受け、応募申請時点で事務局からの補助金支払が完了していない</li>
+                <li>応募申請日を起点にして過去3年間に「ものづくり・商業・サービス生産性向上促進補助金」又は「中小企業等事業再構築促進補助金」の交付決定を合計で2回以上受けた</li>
+                <li>観光庁の「観光地・観光産業における人材不足対策事業」により設備投資に対する補助金の交付決定を受けた事業者、あるいはその申請を行っている</li>
+              </ul>
+            </label>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <h3>システム理解の確認</h3>
+          <div class="check-item">
+            <input type="checkbox" id="c13" data-group="checklist">
+            <label for="c13">申請するシステムについて、補助事業者は十分理解していますか？
+              <span class="item-note">事務局から問い合わせ（例：口頭審査）の際に補助事業者様から伝える必要があり、システム情報や申請内容を十分に理解している必要がございます。</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c14" data-group="checklist">
+            <label for="c14">申請システムについての打ち合わせや説明会は実施されましたか？あるいは実施予定はありますか？
+              <span class="item-note">必ずご送客前にシステムについてのご説明をお願いいたします。</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <h3>⚠️ 不正に関する注意喚起</h3>
+          <div class="check-item">
+            <input type="checkbox" id="c15" data-group="checklist">
+            <label for="c15">申請代行を主たる業務として行っていませんか？
+              <span class="item-note">本補助金では、申請代行を主たる業務として行うことは禁止されています。申請内容を十分に理解・確認したうえで、申請事業者自身が主体的に申請していますか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c16" data-group="checklist">
+            <label for="c16">システムを実質無料で提供したり、不自然な値引きを行っていませんか？
+              <span class="item-note">システムを実質無料で提供する行為や、請求額と実際の支払額が一致しない取引は禁止されています。請求書等に記載された金額と、実際に支払われる金額は一致していますか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c17" data-group="checklist">
+            <label for="c17">ポイントやクーポン等を利用して、実質的な減額を行っていませんか？
+              <span class="item-note">現金に交換可能なポイントやクーポン等を利用し、補助対象経費の請求額を減額または無償とする行為は禁止されています。証憑に記載される金額と、実際に支払われる金額は一致していますか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c18" data-group="checklist">
+            <label for="c18">補助金を受け取ること自体を目的とした申請になっていませんか？
+              <span class="item-note">申請したシステムは、実際に導入し事業に活用する目的で申請する必要があります。補助金の受給のみを目的とした申請ではありませんか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c19" data-group="checklist">
+            <label for="c19">補助対象経費の一部または全額について、払い戻しを受けていませんか？
+              <span class="item-note">請求額に相当する金額を、口座振込や現金等で払い戻す行為は禁止されています。請求書に記載された金額と、実際に支払われる金額は一致していますか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c20" data-group="checklist">
+            <label for="c20">第三者を介した不適切な資金の還流を行っていませんか？
+              <span class="item-note">発注先や補助事業と直接関係のない第三者から資金提供を受け、資金を還流させる行為は禁止されています。補助事業外の取引を偽装する行為は行っていませんか？</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c21" data-group="checklist">
+            <label for="c21">不正が確認された場合の対応について理解していますか？
+              <span class="item-note">不正や不適切な行為が確認された場合、交付決定の取消しや補助金返還等の措置が取られる可能性があります。これらについて理解していますか？</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUB7Ejwdrm5LU5u3FWF5tYCn5il_eawazrF3J7bjjVJLJid_kMtwwHKWjggJp71Y1lakNgZ4lQ9kA--dEYDe3MlN-R5j4LBTa6NfvLeFSkpTPcqaLGhKuI3tmHdrF4nwEESDiZ77SlgvlFcDhg9qVpPN8oyGAoBYrQGEJ1jUO0L3vP-bHshR6YE8S4hJ=w1280" alt="確認項目イメージ" style="margin-top:10px;">
+      <p class="note-line" style="margin-top:14px;">全ての項目をご確認いただけましたら、送客フォームへお進みください。</p>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="flow">← 送客までの流れへ</a>
+        <a href="#" class="pill-btn" data-nav="system">申請システムについて →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 申請システムについて ===================== -->
+<section data-view="system">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">STEP 03</span>
+        <h2>申請システムについて</h2>
+        <p class="lead">
+          本補助金申請にあたり、導入予定のシステム内容について、事前にお客様へ十分にご説明いただき、ご理解を得ていただく必要がございます。下記内容につきましてご確認のうえ、ご説明ならびにヒヤリングの実施をお願いいたします。
+        </p>
+        <p class="lead">
+          また、下記内容につきましては、「事業計画書」および「申請内容」を作成するために必須の情報となります。恐れ入りますが、資料としてご準備のうえ、送客フォームへ添付をお願いいたします。
+        </p>
+        <p class="lead">
+          なお、ご提案時に作成された「提案書」や「見積書」が既にある場合は、そちらをご提出いただいて問題ございません。ただし、記載内容に不足がある場合は、不足項目について別途資料を作成のうえ、ご提出をお願いいたします。
+        </p>
+        <p class="note-line">※ご提出いただく資料は国へ提出するものではございませんので、内容が確認できる簡易的な資料で構いません。</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">1</div>
+        <div class="num-body">
+          <h3>導入背景</h3>
+          <ul>
+            <li>補助事業者が抱えている業務上の課題</li>
+            <li>なぜ当該システム導入が必要となったのか</li>
+            <li>人手不足・業務量増加・属人化などの背景整理　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">2</div>
+        <div class="num-body">
+          <h3>システム概要</h3>
+          <ul>
+            <li>導入予定システムの全体像</li>
+            <li>どの業務を対象とするシステムか</li>
+            <li>利用形態　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">3</div>
+        <div class="num-body">
+          <h3>システム詳細</h3>
+          <ul>
+            <li>対象業務の範囲</li>
+            <li>システム構成や処理の流れ</li>
+            <li>業務とシステムの関係性が分かる説明　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">4</div>
+        <div class="num-body">
+          <h3>機能説明</h3>
+          <ul>
+            <li>実装予定の機能一覧</li>
+            <li>各機能で何ができるのか</li>
+            <li>業務上どの作業を代替・支援するのか　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">5</div>
+        <div class="num-body">
+          <h3>見積書（内容を詳細に記載）</h3>
+          <ul>
+            <li>見積内容のうち、補助対象となる経費の明確化</li>
+            <li>補助対象外経費がある場合は、その区分整理</li>
+          </ul>
+          <p class="note-line">※補助金申請は見積金額を基準に行います。そのため、将来的な業務拡張や必要工数も考慮し、余裕を持った金額設定を推奨しております（申請後に申請金額を超える増額はできません）。</p>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">6</div>
+        <div class="num-body">
+          <h3>補助事業者の現状業務工数</h3>
+          <p>システムに付随する各業務について、現場全体において、「1日あたりの作業時間（分）」および「月間の回数」をご記入ください。</p>
+          <p class="note-line">※業務数が多いほど省力化効果が高く評価され、採択されやすくなりますので、10業務以上の記載をお願いいたします。</p>
+          <p class="note-line">下記表は記載方法の例となります。業務内容については例の転用ではなく、今回ご提案いただくシステムの機能・構成に沿って、一から算出・整理した内容をご記入ください。</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAk3qukZC8Ypk7PA2LVKfuClCY0k6n0Lx5qPswErLly3-Eli2SOyyfrb6brgZJuNQ03uhdfkdr0F8gAhQRhMYnjxX6GKojsP4CvGRUPgDxnD14SC3m-LAHirdaM1ymOmtnsmWKp_32qy6FLHbo3WJjSPLLveb2ox4VDWTnO8hTT8HIkN8VHJJ2EJGjIgQOq1sfXzIGG6Dtx-Xo8A-lhve7j9LVgbiPyypVRs1fij3g=w1280" alt="業務工数の記載例">
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">7</div>
+        <div class="num-body">
+          <h3>省力化効果の説明</h3>
+          <ul>
+            <li>システム導入前後で、どの業務がどの程度削減されるのか（6の現状工数をもとに作成ください）</li>
+            <li>作業時間・作業人数・作業工程の変化</li>
+            <li>定量的な説明（例：1日〇分、月〇時間削減、〇％削減　等）　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">8</div>
+        <div class="num-body">
+          <h3>販売事業者様の役務範囲</h3>
+          <ul>
+            <li>設計・開発</li>
+            <li>導入・初期設定</li>
+            <li>操作説明</li>
+            <li>保守・サポート対応　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">9</div>
+        <div class="num-body">
+          <h3>導入スケジュール</h3>
+          <ul>
+            <li>要件定義から本稼働までの流れ</li>
+            <li>各工程のおおよその期間</li>
+            <li>補助事業期間内で完結することが分かる内容　など</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">10</div>
+        <div class="num-body">
+          <h3>補助対象経費の明示</h3>
+          <ul>
+            <li>見積内容のうち、補助対象となる経費の明確化</li>
+            <li>補助対象外経費がある場合は、その区分整理　など</li>
+          </ul>
+          <a href="#" data-nav="system-costs" class="pill-btn ghost small">補助対象経費についてはこちら →</a>
+        </div>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+        <a class="pill-btn" href="https://s57i7.share.hsforms.com/25J7BV51XQ9u9396ytOD8ig" target="_blank" rel="noopener">送客フォームへ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 補助対象経費について ===================== -->
+<section data-view="system-costs">
+  <div class="section soft">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">申請システムについて ／ 補助対象経費</span>
+        <h2>補助対象経費について</h2>
+      </div>
+
+      <div class="card" style="margin-bottom:24px;">
+        <h3 style="font-size:17px;">1. 補助対象経費の全体概要</h3>
+        <ul>
+          <li>補助対象となるのは「本事業のために使われることが明確で、必要性・金額の妥当性を証拠書類で確認できる経費」</li>
+          <li>交付決定日以降に契約（発注）し、補助事業期間内に支払い完了したもののみ対象</li>
+          <li>契約（発注）先以外への支払いは不可</li>
+          <li>経費区分ごとに下記3区分に上限が設定：上限なし／上限「補助対象経費総額（税抜）の1/2」／上限「補助対象経費総額（税抜）の1/3」</li>
+        </ul>
+      </div>
+
+      <div class="must-card">
+        <h4>2. 必須要件：機械装置・システム構築費（最重要）</h4>
+        <p><strong>概要</strong></p>
+        <ul>
+          <li>必ず計上が必要</li>
+          <li>単価50万円（税抜）以上の設備投資を1つ以上行うことが必須</li>
+        </ul>
+        <p><strong>対象となるもの</strong></p>
+        <ul>
+          <li>補助事業専用として使用する機械・装置、工具・器具の購入・製作・リース</li>
+          <li>専用ソフトウェア、情報システムの購入・構築・リース</li>
+          <li>上記と一体で行う改良費・据付費（軽微なもの）</li>
+        </ul>
+        <p><strong>注意点</strong></p>
+        <ul>
+          <li>対象外：車両・船舶・航空機</li>
+          <li>システム構築費を計上する場合は、候補者決定後に「見積書＋仕様書」等、実績報告時に要件定義書や工数資料等の提出を求められる場合あり</li>
+          <li>リースは補助事業期間分のみ按分して対象</li>
+          <li>サイバーセキュリティ対策用ソフトは補助事業で導入したシステム専用の場合のみ対象</li>
+        </ul>
+      </div>
+
+      <h3 style="font-size:19px;margin:32px 0 16px;">3. 任意で計上できる経費</h3>
+      <div class="grid cols-2">
+        <div class="cost-card">
+          <h4>① 運搬費</h4>
+          <p style="font-size:14px;color:var(--sub);">機械装置等の運搬・送料。※機械購入時の運搬費は「機械装置費」に含める</p>
+        </div>
+        <div class="cost-card">
+          <h4>② 技術導入費 <span class="cap-tag warn">上限 1/3</span></h4>
+          <p style="font-size:14px;color:var(--sub);">特許・ノウハウなど知的財産権の導入費。書面による契約が必須。外注費・専門家経費との重複支払い不可。</p>
+        </div>
+        <div class="cost-card">
+          <h4>③ 知的財産権等関連経費 <span class="cap-tag warn">上限 1/3</span></h4>
+          <p style="font-size:14px;color:var(--sub);">特許取得にかかる弁理士手続代行費用等。対象外：特許庁への出願料・審査請求料、拒絶対応の審判・訴訟費用、事業期間内に出願完了しないもの。</p>
+        </div>
+        <div class="cost-card">
+          <h4>④ 外注費 <span class="cap-tag up">上限 1/2</span></h4>
+          <p style="font-size:14px;color:var(--sub);">設備設計や業務の一部を外部委託する費用。書面契約が必須。外注先が設備を購入する費用は不可。機械製作の外注は「機械装置・システム構築費」に計上。システムの脆弱性診断（セキュリティ診断）も対象。</p>
+        </div>
+        <div class="cost-card">
+          <h4>⑤ 専門家経費 <span class="cap-tag up">上限 1/2</span></h4>
+          <p style="font-size:14px;color:var(--sub);">専門家による指導・助言・コンサル費用。1日上限：5万円。対象例：大学教授、弁護士、弁理士、公認会計士等。事業計画書作成を支援した者は対象外。</p>
+        </div>
+        <div class="cost-card">
+          <h4>⑥ クラウドサービス利用費</h4>
+          <p style="font-size:14px;color:var(--sub);">補助事業専用で使用するクラウド・WEBサービス（サーバー領域利用料等）。サーバー購入費・PC等本体は対象外。契約期間が事業期間を超える場合は按分計算。</p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <h2 style="font-size:26px;">補助対象"外"経費について</h2>
+      <p class="lead">以下に該当する経費は、補助対象外となります。</p>
+
+      <div class="card exclude-list">
+        <h4>1. 補助対象外経費の大枠（重要な考え方）</h4>
+        <ul>
+          <li>交付決定前に発生した経費はすべて対象外（事前着手は一切不可、理由の有無は問われない）</li>
+          <li>補助事業と直接関係しない経費は対象外</li>
+          <li>通常業務・維持管理・汎用利用が可能なものは対象外</li>
+          <li>自社内・関係会社間での支払いは原則不可</li>
+          <li>応募時点で対象外経費が大半を占める場合、不採択リスクが高い</li>
+        </ul>
+
+        <h4>2. 時期・手続きに関する対象外経費</h4>
+        <ul>
+          <li>交付決定前に発生したすべての経費</li>
+          <li>過去に購入した設備に関する作業費用</li>
+          <li>既存設備・既存システムに対する費用</li>
+          <li>報告書作成・申請書作成・提出にかかる費用</li>
+          <li>振込手数料、両替手数料、収入印紙</li>
+        </ul>
+
+        <h4>3. 人件費・自社対応に関する対象外経費</h4>
+        <ul>
+          <li>自社人員の人件費・旅費・宿泊費</li>
+          <li>社内システム・基幹システムを自社開発・改修する人件費</li>
+          <li>通常業務の代行作業費用</li>
+          <li>補助事業者自身の移動交通費</li>
+        </ul>
+
+        <h4>4. 設備・システム関連の対象外経費</h4>
+        <ul>
+          <li>汎用性の高い機器・ソフトの購入費（事務用PC、プリンタ、スマホ、タブレット、カメラ、家具等）</li>
+          <li>開発を伴わないパッケージソフトの購入・設定費</li>
+          <li>既存システム・ソフトのバージョンアップ、アップデート費用</li>
+          <li>中古品の購入費</li>
+          <li>自社商品・サービス・システムの製作費・原材料費</li>
+          <li>有償レンタル用機材の購入費</li>
+        </ul>
+
+        <h4>5. 工事・不動産・エネルギー関連の対象外経費</h4>
+        <ul>
+          <li>土地・建物・構築物の取得費用</li>
+          <li>簡易建物（ビニールハウス、コンテナ等）</li>
+          <li>設置場所の整備工事・基礎工事</li>
+          <li>再生エネルギー発電設備（太陽光パネル等）</li>
+          <li>事務所の家賃・敷金・保証金・仲介手数料・光熱水費</li>
+        </ul>
+
+        <h4>6. 車両・移動手段に関する対象外経費</h4>
+        <ul>
+          <li>自動車・車両の購入費、修理費、車検費用</li>
+          <li>船舶・航空機の購入費（ただし「機械及び装置」に該当するものは例外的に対象となる場合あり）</li>
+        </ul>
+
+        <h4>7. 日常経費・消耗品・娯楽費等の対象外経費</h4>
+        <ul>
+          <li>電話代・インターネット利用料（※一部クラウド付帯費用を除く）</li>
+          <li>文房具、事務用品、消耗品</li>
+          <li>新聞代、雑誌購読料、団体会費</li>
+          <li>飲食、接待、娯楽、奢侈費用</li>
+          <li>商品券・金券</li>
+        </ul>
+
+        <h4>8. 税金・金融・保険関係の対象外経費</h4>
+        <ul>
+          <li>消費税・地方消費税などの公租公課</li>
+          <li>各種保険料</li>
+          <li>借入金の利息・遅延損害金</li>
+          <li>リース契約に伴う金利・保険料</li>
+        </ul>
+
+        <h4>9. 外部専門家・関係者との支払いに関する対象外経費</h4>
+        <ul>
+          <li>税理士・公認会計士への決算・申告費用</li>
+          <li>訴訟・係争に関する弁護士費用</li>
+          <li>親会社・子会社・グループ会社間の支払い</li>
+          <li>同一法人内（部署間・社内発注）の支払い</li>
+          <li>親族・従業員・密接な関係者への支払い</li>
+        </ul>
+
+        <h4>10. その他の対象外経費</h4>
+        <ul>
+          <li>社会通念上、公的資金として不適切と判断されるもの</li>
+          <li>補助事業の目的・趣旨に合致しない経費</li>
+        </ul>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="system">← 申請システムについてへ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== みなし大企業 ===================== -->
+<section data-view="deemed-large">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">確認項目</span>
+        <h2>みなし大企業とは</h2>
+        <p class="lead">以下①〜⑥のいずれかに該当する中小企業者は、「みなし大企業」に該当します。</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">①</div>
+        <div class="num-body">
+          <h3>株式・出資の過半数を同一の大企業が保有</h3>
+          <p>発行済株式の総数又は出資価格の総額の2分の1以上を、同一の大企業が所有している中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQW15OdtRHWr1Gsz_t33uRUy49xc6IuDUvOFflohsz5B3lme4v3XwTueYnvzqu2qRu9GPficu-aGMNgoZnybP1VTFNiKRRCJYBTNgsQ5r3VKCT21CMVnINm2NueDcp4x4qoZDl8ywPxT37uITAnseUgB0vFtKybSJfu2RTMSErCYf0gJuzeHkMdqlyBUnLb7MxrQ5f_x6kCKmDQIhw5Pys3ke-w-5MGcM-__g_LE=w1280" alt="①のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">②</div>
+        <div class="num-body">
+          <h3>株式・出資の3分の2以上を大企業が保有</h3>
+          <p>発行済株式の総数又は出資価格の総額の3分の2以上を、大企業が所有している中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQU0-w8HdYXCLA9O3Xi85cat-U-7pHiMYakBXN8bWLWhfmpB4OgJ_67kxzJCdgOCulJcM0HYjccOx8OF-a2FXyJRQMEvVHO8g_hLQcCH2ETfVDdAXy6feiiBtszoYoueER4LzUVClGYXypuaw2mTQHz0wizv30ep7ewbgrRmSzW3QhRCmt78Xtw39b9wrMm4822TvlIMAMiO8lzn_HjVKsoClvHfSDpwLf5QgEdOivw=w1280" alt="②のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">③</div>
+        <div class="num-body">
+          <h3>役員構成による支配</h3>
+          <p>大企業の役員又は職員を兼ねている者が、役員総数の2分の1以上を占めている中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXrv8zb1ZQ6AemsIJWv7xlbiuvhWmNvyLQhuTT0Ikv60TAFb1efwCpXAgob2Z5IWyfejJy1PsDqILLNmg55nEH3R8TWucrpCZsuodDjvnPLQ14UyLluExyAayHopnNhP9ZERpSOUTxUWz6DM52xpI9Z6HlqmaQFC2HOUbyhV-64KjZz388ZgwLb66kI6288YENo7w_PEBSg2KaiPy7T4xZ0_iBOGPGAIiUsgYRqtE8=w1280" alt="③のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">④</div>
+        <div class="num-body">
+          <h3>みなし大企業に該当する中小企業者による支配</h3>
+          <p>発行済株式の総数又は出資価格の総額を、①〜③に該当する中小企業者が所有している中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWuQ70k-y1LbpWMS5l7fWMRHYu85cyXlSSus5Pv4l6VRY4LC5aPOVE2hQB25Kb6dXzCFOe_Zoxl8gw4-yBS8Bep9KM7oE9XzrwUUpnXeoTjDQlUfp9hRpSqNz0S1MhFJR8-vOlrLDCYqZFMr8VGwFWDbQyPkyzD-FlgFAKTdvR5um9J_sjBoILl2Hmz6CdqV5WtWVxeW_0V3TdMU2GDiv7bpPj8E04sWlLuiMLgOEs=w1280" alt="④のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">⑤</div>
+        <div class="num-body">
+          <h3>役員全員が兼職している場合</h3>
+          <p>①〜③に該当する中小企業者の役員又は職員を兼ねている者が、役員総数の全てを占めている中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQW-AyNL1rTno1xMQqb5OzbCb-zrF18B9eB8tYLHQzD7RCeUfwZr3oknkwORErsO8TxLvCA5IW6OfwyE9fqq1B86ChCNMye_G0TduIafbNNBdwLz1ubXyY6ExWrStSDALuyRGd77eScMacwqziwFUd2uY9EaGreWUFvq_NrBB8ONHy4v2voCDk3Jvi3sNnN9T4GjYrLPX3Zy7al1WWdP5OMoZfgkLWlcqnAWwjOdIeE=w1280" alt="⑤のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">⑥</div>
+        <div class="num-body">
+          <h3>課税所得額による判定</h3>
+          <p>応募申請時点において、確定している（申告済みの）直近過去3年間の各年又は各事業年度のうち、課税所得の年平均額が15億円を超える年度がある中小企業者</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXeYoYJXSno4KLIfMvAtH0OVcU1MyqxHpiSCy9ta3gATLJvlLrPuEB65u08Tv_1XUXz0GwyRWrbq-qyql2Js6JurMWQFp_N5nad-DIZs2ovxY977BSeOcDiHK2VdgDFkym7EN-hx0E1FxRtX5FbtZ-eb1MR83Yqp6-RfqVetmrV3kEZv5WtYFYEmX_QwA9nD1JmzP2oCgEgZnjE4tyqajDQvBUgtqwYgA6BF_Zdtgc=w1280" alt="⑥のイメージ">
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:24px;">
+        <h3 style="font-size:17px;">応募後の要件喪失に関する取扱い</h3>
+        <p>応募以降に「公募要領2-1.補助対象者」ア〜カのいずれの要件も満たさなくなった事業者、または上記①〜⑥のいずれかに該当することとなった事業者は、原則として対象外となります。</p>
+        <p>ただし、補助事業実施期間終了後に、ア及びエの表における従業員数・資本金額を超えることとなった事業者や、上記①〜⑥のいずれかに該当することとなった事業者については、補助対象外とはなりません。</p>
+        <a class="pill-btn ghost small" href="https://shoryokuka.smrj.go.jp/ippan/download/" target="_blank" rel="noopener">公募要領を確認する ↗</a>
+      </div>
+
+      <h3 style="font-size:20px;margin:32px 0 14px;">留意事項</h3>
+      <div class="grid cols-2">
+        <div class="cost-card">
+          <h4>大企業の定義</h4>
+          <p style="font-size:14px;color:var(--sub);">大企業とは、中小企業基本法に規定する中小企業者以外の者を指します。資本金及び従業員数がともに、公募要領2-1のアに定める数値を超える場合、大企業に該当します。海外企業についても、資本金及び従業員数がともに同表の数値を超える場合、大企業とみなします。自治体等の公的機関についても、大企業とみなします。</p>
+        </div>
+        <div class="cost-card">
+          <h4>みなし大企業の規定を適用しないケース</h4>
+          <p style="font-size:14px;color:var(--sub);">以下の者が株式を保有する場合は、その保有比率等をもってみなし大企業の規定を適用しません。<br>ⅰ）中小企業投資育成株式会社法に規定する中小企業投資育成株式会社<br>ⅱ）投資事業有限責任組合契約に関する法律に規定する投資事業有限責任組合</p>
+        </div>
+        <div class="cost-card">
+          <h4>適用期間</h4>
+          <p style="font-size:14px;color:var(--sub);">本条件の適用は、補助事業実施期間中にも及びます。</p>
+        </div>
+        <div class="cost-card">
+          <h4>役員の範囲に関する注意</h4>
+          <p style="font-size:14px;color:var(--sub);">上記③における「役員」には、会社法第2条第15号に規定する社外取締役、会社法第381条第1項に規定する監査役は含まれません。</p>
+        </div>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== みなし同一法人 ===================== -->
+<section data-view="deemed-same">
+  <div class="section soft">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">確認項目</span>
+        <h2>みなし同一法人とは</h2>
+        <p class="lead">以下①〜⑦のいずれかに該当する中小企業者は、「みなし同一法人」に該当します。</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">①</div>
+        <div class="num-body">
+          <h3>親会社・子会社の関係</h3>
+          <p>親会社が議決権の50％超を有する子会社が存在する場合、親会社と子会社は「同一法人（みなし同一法人）」とみなします。この場合、いずれか1社のみ申請が可能です。</p>
+          <p>親会社が議決権の50％超を有する子会社が複数存在する場合、親会社および複数の子会社はすべて同一法人とみなし、このうち1社のみ申請が可能です。</p>
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWTarwmEwqnjPIB4sL0OJjkq_8y0SV06a8GU5_Cv2ORuECJ8MTmLwGk8IGtOBAX06kpM3SJ0kKFlH8_tcXZV4rBUFZr8FHvGRp8RBwvOMmvl6vSwI9ZqxLGs7dElYIfw_WVCvuaWlkZnFXw-hH8SiTVQKYSKgr5VQx5TwhezCbSENM684hXotl5cUKc9sywI6NpwNGPxf5CBZ9ZVtVZA6U_c0Bju2LXhw_Ft84k9sE=w1280" alt="①のイメージ">
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">②</div>
+        <div class="num-body">
+          <h3>個人による支配関係</h3>
+          <p>個人が複数の会社それぞれの議決権を50％超保有する場合も、これらの会社は同一法人とみなします。</p>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">③</div>
+        <div class="num-body">
+          <h3>多階層の資本関係（孫会社・ひ孫会社等）</h3>
+          <p>親会社が議決権の50％超を有する子会社が、さらに議決権の50％超を有する孫会社・ひ孫会社等についても、同様の考え方に基づき、同一法人とみなします。</p>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">④</div>
+        <div class="num-body">
+          <h3>人的関係による判定</h3>
+          <p>みなし同一法人の判定にあたっては、配偶者・親子およびその他生計を同一にしている者は、すべて同一の者として取り扱います。過去に交付決定を受けた個人事業主が設立した法人についても、同様の取扱いとします。</p>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">⑤</div>
+        <div class="num-body">
+          <h3>代表者が同一の場合</h3>
+          <p>上記に該当しない場合であっても、代表者が同一の法人については同一法人とみなし、そのうち1社のみ申請が可能です。</p>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">⑥</div>
+        <div class="num-body">
+          <h3>不正な申請行為の禁止</h3>
+          <p>本補助金を受けることを目的として、主要株主や出資比率を変更して申請することは認められません。</p>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">⑦</div>
+        <div class="num-body">
+          <h3>補助事業実施期間中の該当</h3>
+          <p>補助事業実施期間中に、補助事業者が親会社・子会社等との関係により、過去に交付決定を受けているみなし同一法人に該当することとなった場合は、当該補助事業者の交付決定を取り消します。</p>
+        </div>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 基本要件 ===================== -->
+<section data-view="basic-requirements">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">確認項目</span>
+        <h2>基本要件</h2>
+        <p class="lead">※公募回ごとに基本要件が異なります。最新の情報は省力化補助金公式HPの公募要領よりご参照ください。</p>
+      </div>
+
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXwWP1JqTYdquYCnTLUPtIAah3akrMveCkw1hEavLgABb4SmJLMDNb6U8faEAPrMo1-t45uV6SHtqAeJ9BPAZyyiJzec9eXhkSihu5_9_nLdOJp_Hv2PzJmXkiq5oBZsiO6QSdlq2eBt6r2RiY541kE7jcAG6EzlaU2ClbF4B1LVnZqUrOhoKxzop_4qF7r78UCUCkbTAM8Dvu8uyJRU5KEQc5rMamftCuoeSgY=w1280" alt="基本要件一覧">
+        <hr class="divider">
+        <p>※①は努力義務となります。</p>
+        <p>※②〜④は必達となり、報告時に未達の場合は「達成率に応じた額」や「補助金額を事業計画年数で除した額」の補助金返還が発生いたします。</p>
+        <a class="pill-btn ghost small" href="https://shoryokuka.smrj.go.jp/ippan/download/" target="_blank" rel="noopener">最新の公募要領を確認する ↗</a>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 申請基準 ===================== -->
+<section data-view="application-criteria">
+  <div class="section soft">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">確認項目</span>
+        <h2>申請基準</h2>
+        <p class="lead">弊社が定める申請基準は下記の通りとなります。下記4項目を満たすことで申請が可能です。</p>
+      </div>
+
+      <div class="progress-panel">
+        <div class="progress-ring-wrap">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="progress-ring-track" cx="32" cy="32" r="27"></circle>
+            <circle class="progress-ring-bar" id="criteriaRingBar" cx="32" cy="32" r="27" stroke-dasharray="0 170"></circle>
+          </svg>
+          <div class="progress-ring-text" id="criteriaRingText">0%</div>
+        </div>
+        <div class="progress-copy">
+          <div class="p-title">確認の進捗</div>
+          <div class="p-sub"><span id="criteriaCountText">0 / 0</span> 件 確認済み</div>
+        </div>
+      </div>
+
+      <div id="criteriaItems">
+        <div class="check-item">
+          <input type="checkbox" id="cr1" data-group="criteria">
+          <label for="cr1">売上1/5以下のシステム金額である
+            <span class="item-note">今回導入するシステム（補助対象経費）が売上額の1/5以下の設定となっている必要があります。</span>
+          </label>
+        </div>
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXEA2rcdgdktHYVd_lfrplQfPYe-tQxHygFEApqOE8B7bypIGik170Y0v6jtTmYG3dvlS41sdlfp4dozw0Iol9qaFy63b3scKnh5QSLyRc5ZQ22j9Rz7eeqoXK_5dWXuRRbcAJ7KQASHQ9h6kPdXlIA7BLsh__HVVBwMBvOdbCpD4ZRUYUZ6NJg9M2ZdQtxqzFMGcUARVmFfOmlTcSVNijL5ZtAdKZhqFFMZFl_KdA=w1280" alt="売上1/5以下のイメージ" style="margin-bottom:14px;">
+
+        <div class="check-item">
+          <input type="checkbox" id="cr2" data-group="criteria">
+          <label for="cr2">2期連続赤字ではない
+            <span class="item-note">直近2期分の決算において、2期連続で赤字の場合は申請できません。</span>
+          </label>
+        </div>
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXItFjMWunOmxB7GpU7sTZ7PW65BYkXgt7UKjMLpxXjZgfma3MM95BP6RlYLGRc7B830Md9vJkWXFVnn9DXphBNFh1aTRo9h4dyULIYV5pPhEk5yaP5bfqCRXfD0Sb-OQHp4_KLfZdawtUJk-t9mdgfzc9i3Xz00XS8rj4OZyjgpUmEI59abtGXsPVivCBJJBsgkYiuyuIqrz6zLTAK2-B4qe5CXsgT5-I5YVDc7DI=w1280" alt="2期連続赤字ではないイメージ" style="margin-bottom:14px;">
+
+        <div class="check-item">
+          <input type="checkbox" id="cr3" data-group="criteria">
+          <label for="cr3">債務超過ではない
+            <span class="item-note">債務超過とは、会社が保有する資産の総額よりも、借入金等の負債の総額が上回っている状態を指します。</span>
+          </label>
+        </div>
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVHLZEGBl8oUZVXh0B7LPRKidpy9te4lIva96BJ4VvYz5RpJhKGWJkIrHARVM_EwjBlppZzWTXpkpaWm1Lx3eJ_lgh_0W9qLAMZH7KJhv3CUVApD8Y8b7r5qCxfN8v4ALaUjCZo_nmOUts03Jh_tqouBesViW2CQ4YMXpBGltLpldcpvtIoQ1aMZ-mpjQ7exLICz1ODQf4kTAMX6UJNVZVfFxNgYJ3zZKsYvaRLHxQ=w1280" alt="債務超過ではないイメージ" style="margin-bottom:14px;">
+
+        <div class="check-item">
+          <input type="checkbox" id="cr4" data-group="criteria">
+          <label for="cr4">直近1期分以上の決算書類が用意できる</label>
+        </div>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 申請スケジュール ===================== -->
+<section data-view="schedule">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">確認項目</span>
+        <h2>申請スケジュール</h2>
+        <p class="lead">省力化補助金のおおまかなスケジュールは下記の通りとなります。</p>
+        <p class="note-line">※省力化補助金の申請から補助金着金までは、約1年〜2年ほどの期間を要します。</p>
+        <p class="note-line">※着金後も「事業計画実施期間」として原則5年間、国に報告をする必要があります。</p>
+        <p class="note-line">※本補助金は、申請して終わりではなく、実績報告および事業実施期間を含めた中長期的な対応が前提となる制度です。あらかじめ全体のスケジュール感をご理解いただいたうえで、お取り組みください。</p>
+      </div>
+
+      <div class="card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXjaNCRpFuSniRknp7tXU1l-iHNflrjD5HDo0DO5RQrQYJlrMlB0z7uzgAevUXG6UXOcDdobOcUxGkvWN3tPzOBvM4QpoX8eQwAf9ompwVcd7tF-dItWiR2Lbp0URpt9YNiFfVvjjHLKorELkAMvoXX6ZrdapfUfVopYCSA5q7sLkggDAbUJ3V3RUdGMAA1rwp4rnCxGbajbFwPnzjqNEZmhrwKwa1gZsb8EFfq1XA=w1280" alt="申請スケジュール">
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+        <a class="pill-btn" href="https://s57i7.share.hsforms.com/25J7BV51XQ9u9396ytOD8ig" target="_blank" rel="noopener">送客フォームへ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 申請可否判断ツール ===================== -->
+<section data-view="eligibility-tool">
+  <div class="section soft">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">TOOL</span>
+        <h2>申請可否判断ツール</h2>
+        <p class="lead">申請する補助事業者様の情報を入力いただくことで、申請対象になるかどうかを簡単に調べることができるツールです。事前確認の一つとしてご活用ください。</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">✓</div>
+        <div class="tool-body">
+          <h3>省力化投資補助金 申請可否判断ツール</h3>
+          <p>補助事業者様の基本情報（従業員数・資本金・決算状況など）を入力すると、現時点での申請対象要件を満たしているかどうかを簡易的に確認できます。</p>
+          <p class="note-line">※ツールのご利用には、専用アカウントへの登録・ログインが必要です。</p>
+          <div class="btn-row">
+            <a class="pill-btn" href="https://script.google.com/a/macros/momentum-youth.co.jp/s/AKfycbz9ZgEu4W-IF5I7PzGz52fgY4Lg_R9MjL7RFZH33JMz2SXmT1lHY1Br50xnA-wJO6YDtw/exec" target="_blank" rel="noopener">診断ツールを開く ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="warn-box" style="margin-top:22px;">
+        <strong>⚠️ ご利用にあたっての重要な注意事項</strong>
+        本ツールによる判定結果は、あくまで<strong>暫定的な簡易判定</strong>です。ツール上で「申請対象」と表示された場合であっても、実際の採択を保証するものでは<strong>ありません</strong>。最終的な申請可否・採択結果は、事務局による正式な審査によって決定されます。送客前の目安確認としてご利用のうえ、詳細は必ず「確認項目」ページの内容とあわせてご確認ください。
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+        <a href="#" class="pill-btn ghost" data-nav="recipient-site">補助事業者様向けサイトを見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 補助事業者様向けサイトについて ===================== -->
+<section data-view="recipient-site">
+  <div class="section">
+    <div class="wrap">
+      <div class="subtitle-block">
+        <span class="eyebrow">FOR RECIPIENTS</span>
+        <h2>補助事業者様向けサイトについて</h2>
+        <p class="lead">送客後、補助事業者様（実際に申請いただくお客様）には、以下のサイトをご案内しています。制度の概要から申請の流れ、必要書類までをまとめたご案内サイトです。内容を把握しておくことで、お客様への事前説明もスムーズに行えます。</p>
+      </div>
+
+      <div class="browser-mock">
+        <div class="bm-bar">
+          <div class="bm-dots"><span></span><span></span><span></span></div>
+          <div class="bm-url">https://mygrants.github.io/syoryokuka-guide/</div>
+        </div>
+        <iframe src="https://mygrants.github.io/syoryokuka-guide/#top" title="補助事業者様向けサイトのプレビュー" loading="lazy"></iframe>
+      </div>
+
+      <div class="btn-row" style="margin-top:22px;">
+        <a class="pill-btn" href="https://mygrants.github.io/syoryokuka-guide/#top" target="_blank" rel="noopener">サイトを新しいタブで見る ↗</a>
+      </div>
+
+      <div class="section-nav">
+        <a href="#" class="pill-btn ghost" data-nav="eligibility-tool">← 申請可否判断ツールへ</a>
+        <a href="#" class="pill-btn ghost" data-nav="home">ホームへ戻る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="brand" data-nav="home" role="button" tabindex="0" style="cursor:pointer;justify-content:center;">
+    <span>MY補助金パートナー</span>
+  </div>
+  <p>Copyright © MomentumYouth, Inc. All Rights Reserved.</p>
+  <a href="#" class="pill-btn ghost small" data-nav="home">TOPへ戻る</a>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var views = document.querySelectorAll('[data-view]');
+  var navLinks = document.querySelectorAll('[data-nav]');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('drawer');
+  var overlay = document.getElementById('overlay');
+  var drawerClose = document.getElementById('drawerClose');
+
+  function showView(id){
+    var found = false;
+    views.forEach(function(v){
+      if(v.getAttribute('data-view') === id){
+        v.classList.add('active');
+        found = true;
+      } else {
+        v.classList.remove('active');
+      }
+    });
+    if(!found){
+      views.forEach(function(v){
+        v.classList.toggle('active', v.getAttribute('data-view') === 'home');
+      });
+      id = 'home';
+    }
+    navLinks.forEach(function(l){
+      if(l.tagName === 'A'){
+        l.classList.toggle('active', l.getAttribute('data-nav') === id);
+      }
+    });
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+    history.replaceState(null, '', '#' + id);
+    closeDrawer();
+  }
+
+  navLinks.forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      showView(el.getAttribute('data-nav'));
+    });
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        showView(el.getAttribute('data-nav'));
+      }
+    });
+  });
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
+  hamburgerBtn.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeDrawer();
+  });
+
+  // ---------- Checklist persistence + progress ring ----------
+  function setupChecklist(storageKey, groupName, ringBarId, ringTextId, countTextId){
+    var STORAGE_KEY = storageKey;
+    var boxes = document.querySelectorAll('input[type="checkbox"][data-group="' + groupName + '"]');
+    var ringBar = document.getElementById(ringBarId);
+    var ringText = document.getElementById(ringTextId);
+    var countText = document.getElementById(countTextId);
+    var RADIUS = 27;
+    var CIRC = 2 * Math.PI * RADIUS;
+
+    var saved = {};
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) saved = JSON.parse(raw);
+    } catch(e){ saved = {}; }
+
+    boxes.forEach(function(box){
+      if(saved[box.id]) box.checked = true;
+      box.addEventListener('change', function(){
+        saved[box.id] = box.checked;
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch(e){}
+        updateProgress();
+      });
+    });
+
+    function updateProgress(){
+      var total = boxes.length;
+      var checked = 0;
+      boxes.forEach(function(b){ if(b.checked) checked++; });
+      var pct = total === 0 ? 0 : Math.round((checked/total) * 100);
+      if(ringBar){
+        var filled = (pct/100) * CIRC;
+        ringBar.setAttribute('stroke-dasharray', filled + ' ' + CIRC);
+      }
+      if(ringText) ringText.textContent = pct + '%';
+      if(countText) countText.textContent = checked + ' / ' + total;
+    }
+    updateProgress();
+  }
+
+  setupChecklist('shoryokuka-checklist-v1', 'checklist', 'checklistRingBar', 'checklistRingText', 'checklistCountText');
+  setupChecklist('shoryokuka-criteria-v1', 'criteria', 'criteriaRingBar', 'criteriaRingText', 'criteriaCountText');
+
+  // ---------- Scroll reveal ----------
+  var revealObserver = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'}) : null;
+
+  function primeReveal(root){
+    var els = root.querySelectorAll('.quicknav-card, .num-card, .cost-card, .card, .tool-card, .browser-mock, .roadmap-node');
+    els.forEach(function(el){
+      if(el.classList.contains('reveal')) return;
+      el.classList.add('reveal');
+      if(revealObserver){
+        revealObserver.observe(el);
+      } else {
+        el.classList.add('in-view');
+      }
+    });
+  }
+  views.forEach(function(v){ primeReveal(v); });
+
+  // ---------- Initial view from hash ----------
+  var initial = (location.hash || '').replace('#', '');
+  showView(initial || 'home');
+})();
+</script>
+
+</body>
+</html>
