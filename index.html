@@ -348,6 +348,86 @@
   .browser-mock iframe{width:100%;height:520px;border:none;display:block;}
   @media(max-width:700px){.browser-mock iframe{height:400px;}}
 
+  /* ---------- Lightbox ---------- */
+  [data-view] img:not(.no-lightbox){cursor:zoom-in;transition:opacity .15s ease;}
+  [data-view] img:not(.no-lightbox):hover{opacity:.92;}
+  .lightbox-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:300;
+    display:flex;align-items:center;justify-content:center;padding:32px;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .lightbox-overlay.open{opacity:1;pointer-events:auto;}
+  .lightbox-overlay img{
+    max-width:min(1100px,92vw);max-height:88vh;border-radius:14px;cursor:default;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .lightbox-close{
+    position:absolute;top:22px;right:26px;width:40px;height:40px;border-radius:50%;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;
+    font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.2);}
+
+  /* ---------- Image placeholder (pending upload) ---------- */
+  .img-pending{
+    border:1.5px dashed var(--border);border-radius:16px;
+    padding:40px 24px;text-align:center;color:var(--sub);font-size:13.5px;background:var(--soft);
+  }
+
+  /* ---------- Data table ---------- */
+  .table-wrap{
+    border:1px solid var(--border-light);border-radius:18px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(0,0,0,0.03);
+  }
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table.data-table{
+    width:100%;border-collapse:collapse;min-width:560px;
+    font-size:14px;background:#fff;
+  }
+  table.data-table thead th{
+    background:var(--text);color:#fff;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.02em;
+    text-align:left;padding:14px 18px;white-space:nowrap;
+  }
+  table.data-table thead th.num{text-align:right;}
+  table.data-table tbody td{
+    padding:13px 18px;border-bottom:1px solid var(--border-light);color:var(--text);
+    white-space:nowrap;
+  }
+  table.data-table tbody td.label{white-space:normal;min-width:260px;color:var(--text);}
+  table.data-table tbody td.num{
+    text-align:right;font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;color:var(--sub);
+  }
+  table.data-table tbody td.effect{
+    text-align:right;font-family:'Inter',sans-serif;font-weight:700;color:var(--blue);
+    font-variant-numeric:tabular-nums;
+  }
+  table.data-table tbody tr:last-child td{border-bottom:none;}
+  table.data-table tbody tr:nth-child(even){background:var(--soft);}
+  table.data-table tbody tr:hover{background:#EFF6FF;}
+  .table-caption{
+    padding:14px 18px;background:var(--card);border-top:1px solid var(--border-light);
+    font-size:12.5px;color:var(--sub);
+  }
+
+  /* ---------- Schedule phase diagram ---------- */
+  .phase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;align-items:stretch;}
+  @media(max-width:820px){.phase-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.phase-grid{grid-template-columns:1fr;}}
+  .phase-col{background:var(--card);border:1px solid var(--border-light);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;}
+  .phase-head{background:var(--text);color:#fff;font-weight:700;font-size:13.5px;padding:13px 14px;text-align:center;letter-spacing:.01em;}
+  .phase-steps{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .phase-step{font-size:13px;padding:9px 10px;border-radius:9px;background:var(--soft);color:var(--text);text-align:center;line-height:1.4;}
+  .phase-step.milestone{background:#FFF4E5;color:var(--orange);font-weight:700;}
+
+  .duration-list{display:flex;flex-direction:column;gap:10px;}
+  .duration-row{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    background:var(--card);border:1px solid var(--border-light);border-radius:14px;padding:15px 20px;
+  }
+  .duration-row .d-label{font-size:14px;color:var(--text);}
+  .duration-row .d-value{font-size:14px;font-weight:700;color:var(--blue);white-space:nowrap;font-family:'Inter',sans-serif;}
+
   /* ---------- Footer ---------- */
   footer.site-footer{
     padding:56px 0 40px;text-align:center;border-top:1px solid var(--border-light);background:var(--soft);
@@ -838,7 +918,36 @@
           <p>システムに付随する各業務について、現場全体において、「1日あたりの作業時間（分）」および「月間の回数」をご記入ください。</p>
           <p class="note-line">※業務数が多いほど省力化効果が高く評価され、採択されやすくなりますので、10業務以上の記載をお願いいたします。</p>
           <p class="note-line">下記表は記載方法の例となります。業務内容については例の転用ではなく、今回ご提案いただくシステムの機能・構成に沿って、一から算出・整理した内容をご記入ください。</p>
-          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAk3qukZC8Ypk7PA2LVKfuClCY0k6n0Lx5qPswErLly3-Eli2SOyyfrb6brgZJuNQ03uhdfkdr0F8gAhQRhMYnjxX6GKojsP4CvGRUPgDxnD14SC3m-LAHirdaM1ymOmtnsmWKp_32qy6FLHbo3WJjSPLLveb2ox4VDWTnO8hTT8HIkN8VHJJ2EJGjIgQOq1sfXzIGG6Dtx-Xo8A-lhve7j9LVgbiPyypVRs1fij3g=w1280" alt="業務工数の記載例">
+          <div class="table-wrap">
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>取引先・案件管理業務</th>
+                    <th class="num">作業時間（分）</th>
+                    <th class="num">月間の回数</th>
+                    <th class="num">省力化効果</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="label">顧客・取引先情報をスプレッドシートへ個別に入力</td><td class="num">5</td><td class="num">80</td><td class="effect">70.0%</td></tr>
+                  <tr><td class="label">顧客情報の変更時に、複数の管理表を手作業で修正</td><td class="num">10</td><td class="num">20</td><td class="effect">75.0%</td></tr>
+                  <tr><td class="label">案件内容や対応履歴をメモ・別ファイルで管理</td><td class="num">5</td><td class="num">60</td><td class="effect">60.0%</td></tr>
+                  <tr><td class="label">電話・メール対応後に内容を管理表へ転記</td><td class="num">8</td><td class="num">50</td><td class="effect">65.0%</td></tr>
+                  <tr><td class="label">案件の進捗状況を手動で更新・色分け管理</td><td class="num">5</td><td class="num">40</td><td class="effect">70.0%</td></tr>
+                  <tr><td class="label">担当者別の案件状況を一覧にまとめ直す作業</td><td class="num">30</td><td class="num">4</td><td class="effect">80.0%</td></tr>
+                  <tr><td class="label">対応漏れがないかを目視で確認</td><td class="num">10</td><td class="num">20</td><td class="effect">85.0%</td></tr>
+                  <tr><td class="label">過去の顧客対応履歴を探すため、ファイルやメールを検索</td><td class="num">10</td><td class="num">30</td><td class="effect">75.0%</td></tr>
+                  <tr><td class="label">最新情報を確認するため、複数資料を開いて照合</td><td class="num">8</td><td class="num">25</td><td class="effect">70.0%</td></tr>
+                  <tr><td class="label">社内共有のため、チャットや口頭で状況を個別連絡</td><td class="num">5</td><td class="num">40</td><td class="effect">60.0%</td></tr>
+                  <tr><td class="label">会議前に案件状況を集計し、資料を作成</td><td class="num">60</td><td class="num">2</td><td class="effect">70.0%</td></tr>
+                  <tr><td class="label">複数の管理表から数値を拾って転記</td><td class="num">15</td><td class="num">10</td><td class="effect">80.0%</td></tr>
+                  <tr><td class="label">転記ミス・入力漏れの確認および修正作業</td><td class="num">10</td><td class="num">15</td><td class="effect">84.0%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-caption">※これは記載方法の一例です。業務内容は今回ご提案いただくシステムの機能・構成に沿って、一から算出・整理した内容をご記入ください。</div>
+          </div>
         </div>
       </div>
 
@@ -1231,10 +1340,39 @@
       </div>
 
       <div class="card">
-        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXwWP1JqTYdquYCnTLUPtIAah3akrMveCkw1hEavLgABb4SmJLMDNb6U8faEAPrMo1-t45uV6SHtqAeJ9BPAZyyiJzec9eXhkSihu5_9_nLdOJp_Hv2PzJmXkiq5oBZsiO6QSdlq2eBt6r2RiY541kE7jcAG6EzlaU2ClbF4B1LVnZqUrOhoKxzop_4qF7r78UCUCkbTAM8Dvu8uyJRU5KEQc5rMamftCuoeSgY=w1280" alt="基本要件一覧">
-        <hr class="divider">
+        <p style="margin-bottom:0;">省力化補助金【一般型】の申請には、以下の要件を全て満たす3〜5年の事業計画を策定する必要があります。</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-badge">1</div>
+        <div class="num-body">
+          <h3>労働生産性の向上 <span class="cap-tag" style="color:var(--sub);">※努力義務</span></h3>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">2</div>
+        <div class="num-body">
+          <h3>1人当たりの給与支給総額の増加 <span class="cap-tag warn">※必達</span></h3>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">3</div>
+        <div class="num-body">
+          <h3>最低賃金の引き上げ <span class="cap-tag warn">※必達</span></h3>
+        </div>
+      </div>
+      <div class="num-card">
+        <div class="num-badge">4</div>
+        <div class="num-body">
+          <h3>次世代育成支援対策推進法に基づく一般事業主行動計画の公表 <span class="cap-tag warn">※必達</span></h3>
+          <p>※従業員数21名以上の場合</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:10px;">
+        <hr class="divider" style="margin:0 0 20px;">
         <p>※①は努力義務となります。</p>
-        <p>※②〜④は必達となり、報告時に未達の場合は「達成率に応じた額」や「補助金額を事業計画年数で除した額」の補助金返還が発生いたします。</p>
+        <p style="margin-bottom:0;">※②〜④は必達となり、報告時に未達の場合は「達成率に応じた額」や「補助金額を事業計画年数で除した額」の補助金返還が発生いたします。</p>
         <a class="pill-btn ghost small" href="https://shoryokuka.smrj.go.jp/ippan/download/" target="_blank" rel="noopener">最新の公募要領を確認する ↗</a>
       </div>
 
@@ -1297,8 +1435,20 @@
         </div>
       </div>
 
+      <div class="tool-card" style="margin-top:26px;">
+        <div class="tool-icon">✓</div>
+        <div class="tool-body">
+          <h3>この基準を満たすか、ツールでも確認できます</h3>
+          <p>補助事業者様の情報を入力すると、申請対象になるかどうかを簡易的に確認できる「申請可否判断ツール」もあわせてご活用ください（暫定的な簡易判定であり、採択を保証するものではありません）。</p>
+          <div class="btn-row">
+            <a href="#" class="pill-btn ghost small" data-nav="eligibility-tool">申請可否判断ツールを見る →</a>
+          </div>
+        </div>
+      </div>
+
       <div class="section-nav">
         <a href="#" class="pill-btn ghost" data-nav="checklist">← 確認項目へ戻る</a>
+        <a href="#" class="pill-btn" data-nav="eligibility-tool">申請可否判断ツールへ →</a>
       </div>
     </div>
   </div>
@@ -1317,8 +1467,60 @@
         <p class="note-line">※本補助金は、申請して終わりではなく、実績報告および事業実施期間を含めた中長期的な対応が前提となる制度です。あらかじめ全体のスケジュール感をご理解いただいたうえで、お取り組みください。</p>
       </div>
 
+      <div class="phase-grid">
+        <div class="phase-col">
+          <div class="phase-head">応募申請</div>
+          <div class="phase-steps">
+            <div class="phase-step milestone">公募開始</div>
+            <div class="phase-step">必要書類回収</div>
+            <div class="phase-step">加点項目申請</div>
+            <div class="phase-step">事業計画作成</div>
+            <div class="phase-step milestone">応募申請</div>
+            <div class="phase-step milestone">候補者決定</div>
+          </div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">交付申請</div>
+          <div class="phase-steps">
+            <div class="phase-step">相見積もり</div>
+            <div class="phase-step">必要書類回収</div>
+            <div class="phase-step milestone">交付申請</div>
+            <div class="phase-step milestone">交付決定</div>
+          </div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">補助事業実施期間</div>
+          <div class="phase-steps">
+            <div class="phase-step">契約</div>
+            <div class="phase-step">納品</div>
+            <div class="phase-step">請求</div>
+            <div class="phase-step">支払い</div>
+            <div class="phase-step">必要書類回収</div>
+            <div class="phase-step milestone">実績報告</div>
+          </div>
+        </div>
+        <div class="phase-col">
+          <div class="phase-head">補助事業実施後</div>
+          <div class="phase-steps">
+            <div class="phase-step milestone">確定検査</div>
+            <div class="phase-step">補助金請求</div>
+            <div class="phase-step">補助金入金</div>
+            <div class="phase-step milestone">効果報告（5年間）</div>
+          </div>
+        </div>
+      </div>
+
       <div class="card">
-        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXjaNCRpFuSniRknp7tXU1l-iHNflrjD5HDo0DO5RQrQYJlrMlB0z7uzgAevUXG6UXOcDdobOcUxGkvWN3tPzOBvM4QpoX8eQwAf9ompwVcd7tF-dItWiR2Lbp0URpt9YNiFfVvjjHLKorELkAMvoXX6ZrdapfUfVopYCSA5q7sLkggDAbUJ3V3RUdGMAA1rwp4rnCxGbajbFwPnzjqNEZmhrwKwa1gZsb8EFfq1XA=w1280" alt="申請スケジュール">
+        <h3 style="font-size:16px;margin-bottom:16px;">期間の目安</h3>
+        <div class="duration-list">
+          <div class="duration-row"><span class="d-label">公募開始 → 応募申請</span><span class="d-value">1.5〜2か月</span></div>
+          <div class="duration-row"><span class="d-label">応募申請 → 候補者決定</span><span class="d-value">2〜3か月</span></div>
+          <div class="duration-row"><span class="d-label">相見積もり 〜 交付申請</span><span class="d-value">2か月以内</span></div>
+          <div class="duration-row"><span class="d-label">交付申請 → 交付決定</span><span class="d-value">不備状況によって変動</span></div>
+          <div class="duration-row"><span class="d-label">交付決定 → 実績報告</span><span class="d-value">最大18カ月以内</span></div>
+          <div class="duration-row"><span class="d-label">候補者決定 → 実績報告</span><span class="d-value">最大20カ月以内</span></div>
+          <div class="duration-row"><span class="d-label">効果報告（実績報告後）</span><span class="d-value">5年間</span></div>
+        </div>
       </div>
 
       <div class="section-nav">
@@ -1400,7 +1602,7 @@
   <div class="brand" data-nav="home" role="button" tabindex="0" style="cursor:pointer;justify-content:center;">
     <span>MY補助金パートナー</span>
   </div>
-  <p>Copyright © MomentumYouth, Inc. All Rights Reserved.</p>
+  <p>Copyright © MY補助金パートナー. All Rights Reserved.</p>
   <a href="#" class="pill-btn ghost small" data-nav="home">TOPへ戻る</a>
 </footer>
 
@@ -1539,6 +1741,38 @@
     });
   }
   views.forEach(function(v){ primeReveal(v); });
+
+  // ---------- Lightbox ----------
+  var lightbox = document.createElement('div');
+  lightbox.className = 'lightbox-overlay';
+  lightbox.innerHTML = '<button class="lightbox-close" aria-label="閉じる">×</button><img alt="">';
+  document.body.appendChild(lightbox);
+  var lightboxImg = lightbox.querySelector('img');
+  var lightboxCloseBtn = lightbox.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox) closeLightbox();
+  });
+  lightboxCloseBtn.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+  document.addEventListener('click', function(e){
+    var img = e.target.closest('[data-view] img:not(.no-lightbox)');
+    if(img){
+      openLightbox(img.currentSrc || img.src, img.alt);
+    }
+  });
 
   // ---------- Initial view from hash ----------
   var initial = (location.hash || '').replace('#', '');
